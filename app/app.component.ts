@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
         <td *ngFor="let currentAnimal of animals"><button (click)='editAnimal(currentAnimal)'>Edit</button></td>
       </tr>
     </table>
-    <div>
+    <div *ngIf="selectedAnimal">
       <h3>Edit Animal</h3>
       <label>Edit Animal Name</label>
       <input [(ngModel)]="selectedAnimal.name">
@@ -27,6 +27,7 @@ import { Component } from '@angular/core';
       <input [(ngModel)]="selectedAnimal.age">
       <label>Enter number of Caretakers:</label>
       <input [(ngModel)]="selectedAnimal.caretakers">
+      <button (click)="finishedEditing()">Done</button>
     </div>
   </div>
   `
@@ -38,10 +39,14 @@ export class AppComponent {
   new Animal('Ocelot', 'Prince', 4, 'Carnivore', 'tropical rain forest building', 6, 'male', 'laying in the sunshine', 'toys that are not rope-based'),
   new Animal('northwest black tailed deer', 'tinkerbell', 8, 'Herbivore', 'northern trail', 2, 'female', 'delicate roots and leaves', 'loud noises')
   ];
-  selectedAnimal: Animal = this.animals[0];
+  selectedAnimal = null;
 
   editAnimal(clickedAnimal) {
     this.selectedAnimal = clickedAnimal;
+  }
+
+  finishedEditing() {
+  this.selectedAnimal = null;
   }
 }
 
