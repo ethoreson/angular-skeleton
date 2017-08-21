@@ -13,6 +13,34 @@ import { Animal } from './animal.model';
       <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.name}}</td>
     </tr>
     <tr>
+      <th>Age: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.age}}</td>
+    </tr>
+    <tr>
+      <th>Diet: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.diet}}</td>
+    </tr>
+    <tr>
+      <th>Location: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.location}}</td>
+    </tr>
+    <tr>
+      <th>Number of Caretakers: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.caretakers}}</td>
+    </tr>
+    <tr>
+      <th>Sex: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.sex}}</td>
+    </tr>
+    <tr>
+      <th>Likes: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.likes}}</td>
+    </tr>
+    <tr>
+      <th>Dislikes: </th>
+      <td *ngFor="let currentAnimal of childAnimalList">{{currentAnimal.dislikes}}</td>
+    </tr>
+    <tr>
       <th>Edit: </th>
       <td *ngFor="let currentAnimal of childAnimalList"><button (click)='editButtonHasBeenClicked(currentAnimal)'>Edit</button></td>
     </tr>
